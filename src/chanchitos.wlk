@@ -13,6 +13,9 @@ object casaDePaja {
 	method ocupantes(){
 		return 1
 	}
+	method ataqueAlLobo(){
+		return self.resistencia() + self.ocupantes() * chanchitos.peso()
+	}
 }
 
 object casaDeMadera {
@@ -22,16 +25,23 @@ object casaDeMadera {
 	method ocupantes(){
 		return 2
 	}
+	method ataqueAlLobo(){
+		return self.resistencia() + self.ocupantes() * chanchitos.peso()
+	}
 }
 
 object casaDeLadrillos {
+	var ladrillos = 10
 	method resistencia(){
-		return 2* self.ladrillos(10)
+		return 2 * ladrillos
 	}
 	method ocupantes(){
 		return 3
 	}
 	method ladrillos(cantidadDeLadrillos){
-		return cantidadDeLadrillos
+		ladrillos = cantidadDeLadrillos
+	}
+	method ataqueAlLobo(){
+		return self.resistencia() + self.ocupantes() * chanchitos.peso()
 	}
 }

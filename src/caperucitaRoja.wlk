@@ -4,7 +4,10 @@ import loboFeroz.*
 
 object caperucitaRoja {
 	method peso(){
-		return 60 + canasta.peso()
+		return 60 
+	}
+	method pesoTotal(){
+		return self.peso() + canasta.peso()
 	}
 }
 
@@ -18,6 +21,6 @@ object canasta {
 		return pesoManzana * cantidadDeManzanasEnLaCanasta
 	}
 	method caeManzanaAlSuelo(){
-		cantidadDeManzanasEnLaCanasta = cantidadDeManzanasEnLaCanasta - 1
+		cantidadDeManzanasEnLaCanasta = 0.max(cantidadDeManzanasEnLaCanasta - 1)
 	}
 }

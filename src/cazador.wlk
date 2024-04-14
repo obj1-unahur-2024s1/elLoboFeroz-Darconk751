@@ -7,6 +7,6 @@ object cazador {
 		return 80
 	}
 	method cazar(){
-		loboFeroz.sufreCrisis()
+		loboFeroz.esDisparado()
 	}
 }

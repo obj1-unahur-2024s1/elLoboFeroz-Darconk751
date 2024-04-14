@@ -13,15 +13,21 @@ object loboFeroz {
 		peso = peso + cantidadAAumentar
 	}
 	method disminuirPeso(cantidadADisminuir){
-		peso = peso - cantidadADisminuir
+		peso = 0.max(peso - cantidadADisminuir)
 	}
 	method sufreCrisis(){
 		peso = 10
 	}
 	method come(alimento){
-		self.aumentarPeso(alimento.peso() / 100)
+		self.aumentarPeso(alimento.peso() / 10)
 	}
 	method correr(){
 		self.disminuirPeso(1)
+	}
+	method esDisparado(){
+		self.disminuirPeso(30)
+	}
+	method soplar(casa){
+		self.disminuirPeso(casa.ataqueAlLobo())
 	}
 }
